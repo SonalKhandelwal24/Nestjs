@@ -59,24 +59,8 @@ export class AuthService {
         return refreshToken;
     }
 
-    async changePassword(userId, oldPassword: string, newPassword: string) {
-        //Find the user
-        const user = await this.userService.findOne(userId);
-        if (!user) {
-            throw new NotFoundException('User not found...');
-        }
-
-        //Compare the old password with the password in DB
-        const passwordMatch = await bcrypt.compare(oldPassword, user.password);
-        if (!passwordMatch) {
-            throw new UnauthorizedException('Wrong credentials');
-        }
-
-        //Change user's password
-        const newHashedPassword = await bcrypt.hash(newPassword, 10);
-        user.password = newHashedPassword;
-        await user.save();
-    }
+    
+    
 
     async forgotPassword(email: string) {
         // Find the user by email

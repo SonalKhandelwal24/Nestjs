@@ -54,14 +54,14 @@ export class AuthController {
 
   }
 
-  @Put('change-password')
-  async changePassword(@Body() changePasswordDto: ChangePasswordDto, @Req() req) {
-    return this.authService.changePassword(
-      req.userId,
-      changePasswordDto.oldPassword,
-      changePasswordDto.oldPassword,
-    );
-  }
+  // @Put('change-password')
+  // async changePassword(@Body() changePasswordDto: ChangePasswordDto, @Req() req) {
+  //   return this.authService.changePassword(
+  //     req.userId,
+  //     changePasswordDto.oldPassword,
+  //     changePasswordDto.oldPassword,
+  //   );
+  // }
 
   @Post("forgot-password")
   async forgotPassword(@Body('email') email: string) {
