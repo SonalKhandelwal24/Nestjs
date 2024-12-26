@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nest App</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <h1>This is my MVC Nest</h1>
+
+    {{#each books }}
+        <h3>Title : {{this.title}}</h3>
+        <h3>Author : {{this.author}}</h3>
+        <h3>Published : {{this.published}}</h3>
+        <h3>Copies : {{this.copies}}</h3>
+    {{/each}}
+
+</body>
+</html>
